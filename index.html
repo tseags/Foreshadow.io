@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foreshadow - Strategic Hiring Insights</title>
+    <meta name="description" content="Foreshadow uses AI to analyze job postings in real time, uncovering why companies are hiring, what initiatives they're funding, and the tech stacks they use. Turn hiring trends into your strategic advantage." />
+    <meta property="og:title" content="Foreshadow - Strategic Hiring Insights" />
+    <meta property="og:description" content="Turn job postings and hiring trends into your strategic advantage. AI-powered sales intelligence for smarter outreach." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Foreshadow - Strategic Hiring Insights" />
+    <meta name="twitter:description" content="Turn job postings and hiring trends into your strategic advantage. AI-powered sales intelligence for smarter outreach." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Plus Jakarta Sans', 'sans-serif'],
+            },
+            colors: {
+              primary: '#1459b4',
+              secondary: '#bacee8',
+              neutralLight: '#eaeaea',
+              slateDark: '#475569', // Dark slate for footer/text
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      /* Custom utility for glass effect if needed */
+      .glass {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+      }
+      /* Modal animations */
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes modal-in {
+        from { opacity: 0; transform: scale(0.95) translateY(10px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+      }
+      .animate-fade-in {
+        animation: fade-in 0.2s ease-out forwards;
+      }
+      .animate-modal-in {
+        animation: modal-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-white text-slate-800 antialiased selection:bg-secondary selection:text-primary">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
