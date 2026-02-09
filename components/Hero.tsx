@@ -41,11 +41,11 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWaitlist }) => {
           </Button>
         </div>
 
-        {/* VISUALIZATION CONTAINER */}
-        <div className="relative max-w-5xl mx-auto mt-8 flex justify-center items-center">
+        {/* VISUALIZATION CONTAINER - flex-col on mobile (stack in flow), relative on md+ (absolute overlap) */}
+        <div className="relative max-w-5xl mx-auto mt-8 flex flex-col md:block gap-6 md:gap-0">
 
            {/* 1. MAIN DASHBOARD (Scaled Down & Background) */}
-           <div className="relative w-full max-w-3xl transform translate-x-0 sm:-translate-x-4 lg:-translate-x-12 transition-all duration-500 hover:scale-[1.01] hover:z-10 z-0">
+           <div className="relative w-full max-w-3xl transform translate-x-0 sm:-translate-x-4 lg:-translate-x-12 transition-all duration-500 hover:scale-[1.01] hover:z-10 z-0 order-1 md:order-none shrink-0">
                {/* Subtle glow behind mockup */}
                <div className="absolute -inset-8 bg-gradient-to-b from-primary/10 via-secondary/20 to-transparent rounded-[2rem] blur-3xl opacity-60 pointer-events-none"></div>
                {/* Dashboard Glow */}
@@ -186,15 +186,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWaitlist }) => {
                </div>
            </div>
 
-           {/* 2. OVERLAPPING POP-OUT CARD (Job Description) */}
-           <div className="absolute right-0 top-16 md:right-4 md:top-24 lg:-right-4 w-72 sm:w-80 md:w-96 perspective-1000 z-20 animate-fade-in-up delay-300">
-              <div className="relative bg-white rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100 p-5 sm:p-6 transform transition-transform hover:-translate-y-1 hover:scale-105 duration-300">
+           {/* 2. OVERLAPPING POP-OUT CARD (Job Description) - in flow on mobile, absolute on md+ */}
+           <div className="relative mx-auto md:absolute md:top-24 md:left-auto md:right-4 md:translate-x-0 md:mx-0 w-56 md:w-80 lg:-right-4 lg:w-96 perspective-1000 z-20 animate-fade-in-up delay-300 order-2 md:order-none">
+              <div className="relative bg-white rounded-xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100 p-4 md:p-6 transform transition-transform hover:-translate-y-1 hover:scale-105 duration-300">
 
                   {/* Header */}
-                  <div className="flex justify-between items-start mb-4">
+                  <div className="flex justify-between items-start mb-3 md:mb-4">
                      <div>
-                        <h3 className="text-lg font-bold text-gray-900 leading-tight">VP of Human Resources</h3>
-                        <div className="flex items-center gap-1 text-sm text-gray-500 mt-1">
+                        <h3 className="text-base md:text-lg font-bold text-gray-900 leading-tight">VP of Human Resources</h3>
+                        <div className="flex items-center gap-1 text-xs md:text-sm text-gray-500 mt-1">
                            <Building2 className="w-3 h-3" /> Acme Corp
                            <span className="mx-1">&bull;</span>
                            <MapPin className="w-3 h-3" /> New York, NY
@@ -206,10 +206,10 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWaitlist }) => {
                   </div>
 
                   {/* Divider */}
-                  <div className="h-px bg-gray-100 my-4"></div>
+                  <div className="h-px bg-gray-100 my-3 md:my-4"></div>
 
                   {/* Body Content with Highlight */}
-                  <div className="space-y-3 text-sm text-gray-600 leading-relaxed font-sans">
+                  <div className="space-y-2 md:space-y-3 text-xs md:text-sm text-gray-600 leading-relaxed font-sans">
                      <p>
                         We are looking for an experienced leader to oversee our people operations.
                      </p>
@@ -217,7 +217,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWaitlist }) => {
                      <div className="relative">
                         {/* Highlight Effect */}
                         <div className="relative bg-[#1459b4]/10 rounded-lg p-2 -mx-2 border-l-4 border-[#1459b4]">
-                           <span className="text-gray-900 font-medium">
+                           <span className="text-gray-900 font-medium text-xs md:text-sm">
                               "We are hiring a VP of HR to come in and scale our hiring process. We have a goal to double headcount in the next 12 months and this person will lead the charge."
                            </span>
                         </div>
@@ -227,13 +227,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWaitlist }) => {
                         </div>
                      </div>
 
-                     <p className="opacity-70">
+                     <p className="hidden md:block opacity-70">
                         You will report directly to the CEO and work closely with department heads to ensure...
                      </p>
                   </div>
 
                   {/* Footer Action */}
-                  <div className="mt-6 flex justify-end">
+                  <div className="mt-4 md:mt-6 flex justify-end">
                      <button className="text-xs font-bold text-[#1459b4] flex items-center gap-1 hover:underline">
                         View Full Analysis <ArrowRight className="w-3 h-3" />
                      </button>
@@ -242,8 +242,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpenWaitlist }) => {
               </div>
            </div>
 
-           {/* 3. OUTREACH MESSAGE BUBBLE */}
-           <div className="absolute left-0 -bottom-16 md:left-2 md:-bottom-12 w-56 sm:w-64 md:w-72 z-30 animate-fade-in-up delay-400">
+           {/* 3. OUTREACH MESSAGE BUBBLE - in flow on mobile, absolute on md+ */}
+           <div className="relative mx-auto md:absolute md:top-auto md:left-2 md:bottom-0 md:-mb-12 md:translate-x-0 md:mx-0 w-56 sm:w-64 md:w-72 z-30 animate-fade-in-up delay-400 order-3 md:order-none">
               <div className="relative bg-white rounded-2xl shadow-[0_20px_50px_-12px_rgba(0,0,0,0.25)] border border-gray-100 p-4 sm:p-5 transform transition-transform hover:-translate-y-1 hover:scale-[1.02] duration-300">
                  <div className="flex items-center gap-2 mb-3">
                     <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
